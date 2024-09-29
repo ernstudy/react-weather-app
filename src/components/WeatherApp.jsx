@@ -4,7 +4,6 @@ import { Container } from "@mui/material";
 import WeatherInfo from "./WeatherInfo";
 import Loading from "./Loading";
 import NotFound from "./NotFound";
-import { Tune } from "@mui/icons-material";
 
 export default function WeatherApp() {
   const [weather, setWeather] = useState(null);
@@ -80,10 +79,10 @@ export default function WeatherApp() {
           }}
         >
           <WeatherForm onLoardInfo={loadInfo} />
-          {!weather ? (
-            <Loading />
-          ) : (
+          {weather ? (
             <WeatherInfo weather={weather} weather2={weather2} />
+          ) : (
+            <Loading />
           )}
         </div>
       </div>
