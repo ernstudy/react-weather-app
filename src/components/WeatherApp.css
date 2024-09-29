@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+.weather-container {
+  /* background-image: linear-gradient(to right, #f3b07c, #fcd283); */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2%;
+}
+.weather-app {
+  background: #cfcfcf;
+  max-width: 20rem;
+  height: 35rem;
+  padding: 1.5rem;
+  /* background-image: linear-gradient(to top, #f3b07c, #fcd283); */
+  box-shadow: -2rem -0.8rem 3rem -2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* transition: all 2s; */
+}
+
+.inputs-container {
+  z-index: 1000;
+}
+
+.image {
+  max-width: 370px;
+  margin-top: -3.6rem;
+  margin-left: -3rem;
+  position: fixed;
+  z-index: 1;
+}
+
+.image img {
+  width: 100%;
+  z-index: 1;
+}
+
+.tiles {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin-top: 8px;
+}
+.tiles .tile {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
