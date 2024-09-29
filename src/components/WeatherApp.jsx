@@ -79,7 +79,7 @@ export default function WeatherApp() {
           }}
         >
           <WeatherForm onLoardInfo={loadInfo} />
-          {weather ? (
+          {weather && weather2 ? (
             <WeatherInfo weather={weather} weather2={weather2} />
           ) : (
             <Loading />
