@@ -38,24 +38,31 @@ export default function WeatherApp() {
 
   async function searchCity(city = "paris") {
     const KEY = "b351809ca9a142a099e210233240509";
-    const weatherInfo = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${KEY}&q=${city}&aqi=no`
-    );
-    const json = await weatherInfo.json();
+    try {
+      const weatherInfo = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${KEY}&q=${city}&aqi=no`
+      );
+      const json = await weatherInfo.json();
 
-    console.log(json);
-    setWeather(json);
+      console.log(json);
+      setWeather(json);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function searchCity2(city = "paris") {
     const KEY = "04283eebdfeb1d2ee749f9f97d4ea084";
-    const weatherInfo = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`
-    );
-    const json = await weatherInfo.json();
-
-    console.log(json);
-    setWeather2(json);
+    try {
+      const weatherInfo = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`
+      );
+      const json = await weatherInfo.json();
+      console.log(json);
+      setWeather2(json);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function loadInfo(city) {
@@ -78,11 +85,14 @@ export default function WeatherApp() {
               weatherColor && weatherColor?.replace("to right", "to top"),
           }}
         >
-          <WeatherForm onLoardInfo={loadInfo} />
           {weather && weather2 ? (
-            <WeatherInfo weather={weather} weather2={weather2} />
+            <>
+              <WeatherForm onLoardInfo={loadInfo} />
+
+              <WeatherInfo weather={weather} weather2={weather2} />
+            </>
           ) : (
-            <Loading />
+            <h1>HOLA</h1>
           )}
         </div>
       </div>
